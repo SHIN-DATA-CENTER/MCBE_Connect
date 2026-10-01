@@ -1,0 +1,22 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Bedrock Discord Role Gate",
+    "description": "Discord role based admission for Bedrock Dedicated Server",
+    "uuid": "941cdab3-8bc0-4de5-914f-a39b92a67ea6",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 26, 50]
+  },
+  "modules": [{
+    "type": "script",
+    "language": "javascript",
+    "uuid": "9fe36aba-3f5d-4cd0-b2fd-c281a47a5ad1",
+    "version": [1, 0, 0],
+    "entry": "scripts/main.js"
+  }],
+  "dependencies": [
+    {"module_name": "@minecraft/server", "version": "2.11.0-beta"},
+    {"module_name": "@minecraft/server-admin", "version": "1.0.0-beta"},
+    {"module_name": "@minecraft/server-net", "version": "1.0.0-beta"}
+  ]
+}

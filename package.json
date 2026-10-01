@@ -1,0 +1,8 @@
+{
+  "name": "bedrock-discord-auth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bedrock Dedicated Server addon and Discord role admission bot",
+  "license": "UNLICENSED",
+  "scripts": {"test": "node --experimental-vm-modules tests/test_addon.mjs"}
+}

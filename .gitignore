@@ -1,0 +1,25 @@
+# Runtime credentials and identity data
+config.json
+secrets.json
+variables.json
+*.sqlite3*
+*.db
+*.key
+*.pem
+.env
+.env.*
+# Generated files
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+*.zip
+*.mcpack
+*.log
+# BDS runtime and world backups never belong in this repository
+bedrock_server
+worlds/
+backups/
+.discord-auth-backups/
