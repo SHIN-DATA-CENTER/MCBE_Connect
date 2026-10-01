@@ -15,7 +15,7 @@ from aiohttp import web
 from store import Store, LinkError
 
 ROOT = Path(__file__).resolve().parent
-LOG = logging.getLogger('mochi-auth')
+LOG = logging.getLogger('mcbe-connect')
 
 
 class Unavailable(RuntimeError):

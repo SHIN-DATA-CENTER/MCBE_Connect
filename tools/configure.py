@@ -121,7 +121,7 @@ def configure(server, config_path, mode, bds_version):
         raise ValueError('Use enable for the first installation')
     policy = hashlib.sha256(json.dumps([config['guild_id'], sorted(config['subscriber_role_ids'])]).encode()).hexdigest()
     endpoint = 'http://127.0.0.1:' + str(config['api_port'])
-    pack = server / 'behavior_packs/mochi_auth'
+    pack = server / 'behavior_packs/mcbe-connect'
     module = server / 'config' / MODULE_UUID
     changed = [properties, world / 'level.dat', packs_path, pack, module]
     for path in changed:

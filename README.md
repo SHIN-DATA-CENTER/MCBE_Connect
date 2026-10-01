@@ -108,7 +108,7 @@ discord-auth/venv/bin/python discord-auth/service.py
 curl -fsS http://127.0.0.1:18080/health
 ```
 
-`discord_configured` と `discord_ready` がtrueになれば、既存の方法でBDSを起動します。起動ログに `[mochi-auth:ready]` と `[mochi-auth:api] reachable` が出ることを確認してください。BDSの起動管理は既存の仕組みを利用します。
+`discord_configured` と `discord_ready` がtrueになれば、既存の方法でBDSを起動します。起動ログに `[mcbe-connect:ready]` と `[mcbe-connect:api] reachable` が出ることを確認してください。BDSの起動管理は既存の仕組みを利用します。
 
 Botを常駐させる場合は `examples/systemd/discord-auth.service.example` 内の絶対パスを変更し、ユーザーサービスとして登録できます。
 

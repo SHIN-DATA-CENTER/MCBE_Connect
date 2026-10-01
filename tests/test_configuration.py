@@ -120,7 +120,7 @@ class ConfigurationTests(unittest.TestCase):
                 self.enable()
         self.assertEqual(self.props.read_bytes(), original)
         self.assertEqual((self.world / 'level.dat').read_bytes(), self.raw)
-        self.assertFalse((self.server / 'behavior_packs/mochi_auth').exists())
+        self.assertFalse((self.server / 'behavior_packs/mcbe-connect').exists())
         self.assertFalse((self.server / 'config' / configure.MODULE_UUID).exists())
 
 

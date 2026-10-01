@@ -3,7 +3,7 @@ import { beforeEvents, kickPlayer, variables, secrets } from '@minecraft/server-
 import { http, HttpRequest, HttpRequestMethod, HttpHeader } from '@minecraft/server-net';
 import { DecisionCache } from './decision-cache.js';
 
-const PREFIX = 'mochi_auth:';
+const PREFIX = 'mcbe-connect:';
 const policy = variables.get('policy_hash');
 const endpoint = variables.get('api_url');
 function validEndpoint(value) {
@@ -61,11 +61,11 @@ world.afterEvents.worldLoad.subscribe(() => {
   beforeEvents.asyncPlayerJoin.subscribe(onJoin);
   ready = true;
   // The supervisor requires this marker before reporting service readiness.
-  console.warn('[mochi-auth:ready] version=1');
+  console.warn('[mcbe-connect:ready] version=1');
   request('/v1/online', {players: []}).then(response => {
     if (response.policy !== policy) throw new Error('Policy mismatch');
-    console.warn('[mochi-auth:api] reachable');
-  }).catch(error => console.warn('[mochi-auth:api] offline (' + error.name + '); using saved decisions'));
+    console.warn('[mcbe-connect:api] reachable');
+  }).catch(error => console.warn('[mcbe-connect:api] offline (' + error.name + '); using saved decisions'));
 });
 
 system.runInterval(async () => {
@@ -84,10 +84,10 @@ system.runInterval(async () => {
         kickPlayer(player, 'サブスクロールまたはDiscord連携が解除されたため退出しました。');
       }
     }
-    if (reportedOffline) console.warn('[mochi-auth] Local API recovered');
+    if (reportedOffline) console.warn('[mcbe-connect] Local API recovered');
     reportedOffline = false;
   } catch (_) {
-    if (!reportedOffline) console.warn('[mochi-auth] Local API unavailable; retaining cached decisions');
+    if (!reportedOffline) console.warn('[mcbe-connect] Local API unavailable; retaining cached decisions');
     reportedOffline = true;
   } finally {
     checking = false;
